@@ -7,8 +7,8 @@ namespace etw {
 
 class RetVal {
 public:
-	static const int Success = 0;
-	static const int Failure = -1;
+	static const int Success;
+	static const int Failure;
 
 };
 

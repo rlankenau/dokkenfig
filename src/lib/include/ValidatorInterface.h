@@ -4,12 +4,12 @@
 
 namespace etw {
 
-class Option;
+class OptionInterface;
 
-class Validator
+class ValidatorInterface
 {
 public:
-	virtual int validateOption(Option *op) = 0;
+	virtual int validateOption(OptionInterface *op) = 0;
 };
 
 }

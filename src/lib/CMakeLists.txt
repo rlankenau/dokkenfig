@@ -1,5 +1,6 @@
 set(LIB_SRCS 
     RangeValidator.cpp
+    DiscreteNumericValidator.cpp
 	Common.cpp)
 
 add_library(config ${LIB_SRCS})

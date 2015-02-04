@@ -4,6 +4,7 @@
 namespace etw {
 
 class Schema;
+class ValidationError;
 
 class ConfigurationInterface {
 
@@ -13,6 +14,7 @@ public:
 	virtual int setStringOption(std::string key, std::string val) = 0;
 	virtual int getNumericOption(std::string key, int *val) = 0;
 	virtual int setNUmericOption(std::string key, int val) = 0;
+	virtual int apply(ValidationError &err) = 0;
 
 };
 

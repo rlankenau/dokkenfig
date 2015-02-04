@@ -22,4 +22,9 @@ namespace etw {
 
 		return rc;
 	}
+
+	ValidatorInterface *DiscreteNumeric(int64_t val)
+	{
+		return (ValidatorInterface *)new DiscreteNumericValidator(val);
+	}
 }

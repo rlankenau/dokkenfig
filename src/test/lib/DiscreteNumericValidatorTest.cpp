@@ -9,6 +9,15 @@ using ::testing::_;
 using ::testing::DoAll;
 using ::testing::SetArgPointee;
 
+TEST(DiscreteNumericValidator, ConvenienceMethod)
+{
+	MockOption op;
+	EXPECT_CALL(op, getNumericValue(_)).WillOnce(DoAll(SetArgPointee<0>(1000), Return(etw::RetVal::Success)));
+	etw::ValidatorInterface *v = etw::DiscreteNumeric(1000);
+	ASSERT_EQ(etw::RetVal::Success, v->validateOption((etw::OptionInterface *)&op));
+	delete v;
+}
+
 TEST(DiscreteNumericValidator, LessThanValid)
 {
 	MockOption op;
@@ -24,6 +33,7 @@ TEST(DiscreteNumericValidator, Valid)
 	etw::DiscreteNumericValidator r(1000);
 	ASSERT_EQ(etw::RetVal::Success, r.validateOption((etw::OptionInterface *)&op));
 }
+
 
 TEST(DiscreteNumericValidator, GreaterThanValid)
 {

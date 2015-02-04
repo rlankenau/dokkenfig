@@ -17,6 +17,8 @@ private:
 
 };
 
+ValidatorInterface *Range(int64_t min, int64_t max);
+
 }
 
 #endif

@@ -23,4 +23,9 @@ namespace etw {
 
 		return rc;
 	}
+
+	ValidatorInterface *Range(int64_t min, int64_t max)
+	{
+		return (ValidatorInterface *)new RangeValidator(min, max);
+	}
 }

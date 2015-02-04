@@ -9,6 +9,15 @@ using ::testing::_;
 using ::testing::DoAll;
 using ::testing::SetArgPointee;
 
+TEST(RangeValidator, ConvenienceMethod)
+{
+	MockOption op;
+	EXPECT_CALL(op, getNumericValue(_)).WillOnce(DoAll(SetArgPointee<0>(1000), Return(etw::RetVal::Success)));
+	etw::ValidatorInterface *v = etw::Range(0,1001);
+	ASSERT_EQ(etw::RetVal::Success, v->validateOption((etw::OptionInterface *)&op));
+	delete v;
+}
+
 TEST(RangeValidator, LessThanRange)
 {
 	MockOption op;

@@ -17,6 +17,8 @@ private:
 
 };
 
+ValidatorInterface *DiscreteNumeric(int64_t val);
+
 }
 
 #endif

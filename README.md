@@ -73,15 +73,18 @@ A schema provides the mechanism for validating a configuration, as well as defau
 
 # Example
 
+    The Schema API is in flux, so for right now the best example is in the Wiki, under https://github.com/rlankenau/dokkenfig/wiki/Validation.  The following is mostly up to date.
+
+
     Schema s;
-    
     s.initialize();
     s.addOption("app.buffer.size",       /* Option name */
-                Option::Numeric,         /* Option type */
-                "The number of bytes used for buffering data",  /* Description */
-                Range(1024, 4096),       /* Validation Object */
-                2048);                    /* Default */
-                
+            Option::Numeric,         /* Option type */
+            "The number of bytes used for buffering data",  /* Description */
+            ValidRange(1024, 4096),       /* Validation Object */
+            AnyPlatform(),                   /* Platform validator */
+            NoConsistencyChecks(),           /* Consistency validator */
+            NumericDefault(2048);                    /* Default */
     Configuration c;
 
     c.initialize(s);

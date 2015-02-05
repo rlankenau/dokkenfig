@@ -3,6 +3,8 @@ set(LIB_SRCS
     NumericValidator.cpp
     AnyPlatformValidator.cpp
     PlatformRestrictionValidator.cpp
+	NoConsistencyCheck.cpp
+	ValidationError.cpp
 	Common.cpp)
 
 add_library(config ${LIB_SRCS})

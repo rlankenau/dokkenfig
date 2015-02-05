@@ -8,7 +8,8 @@ set(TEST_SRC
 		RangeValidatorTest.cpp
 		NumericValidatorTest.cpp
 		AnyPlatformValidatorTest.cpp
-		PlatformRestrictionValidatorTest.cpp)
+		PlatformRestrictionValidatorTest.cpp
+		NoConsistencyCheckTest.cpp)
 
 add_executable(config_unit_tests ${TEST_SRC})
 target_link_libraries(config_unit_tests config)

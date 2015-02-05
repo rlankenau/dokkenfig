@@ -9,6 +9,7 @@ namespace etw {
 class OptionInterface {
 
 public:
+	virtual int getOptionName(std::string *out) = 0;
 	virtual int getStringValue(std::string *out) = 0;	
 	virtual int setStringValue(std::string in) = 0;
 	virtual int getNumericValue(int64_t *out) = 0;

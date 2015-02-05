@@ -7,8 +7,6 @@
 
 using ::testing::Return;
 using ::testing::_;
-using ::testing::DoAll;
-using ::testing::SetArgPointee;
 
 TEST(PlatformRestrictionValidator, ConvenienceMethod)
 {

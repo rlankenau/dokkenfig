@@ -18,7 +18,7 @@ public:
 				PlatformValidatorInterface *valid_platforms,
 				ConsistencyValidatorInterface *consistency_check,
 				DefaultInterface *defaults) = 0;
-	/* This only does what I described as "schema validation".  The other 3 types need to be thought about. Maybe the ValidatorInterface can do all of them? */
+
 	virtual int validateConfiguration(ConfigurationInterface *cfg, ValidationError &err) = 0;
 };
 

@@ -6,7 +6,7 @@ namespace etw {
 class PredicateInterface
 {
 public:
-	bool evaluate(ConfigurationInterface *cfg, OptionInterface *op) = 0;
+	virtual bool evaluate(ConfigurationInterface *cfg, OptionInterface *op) = 0;
 };
 
 }

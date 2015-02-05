@@ -1,33 +1,42 @@
 #ifndef ETW_CONFIG_BASIC_PREDICATES_H_
 #define ETW_CONFIG_BASIC_PREDICATES_H_
 
+#include "ConfigurationInterface.h"
+#include "OptionInterface.h"
 #include "ExpressionInterface.h"
 #include "PredicateInterface.h"
+#include <initializer_list>
+#include <list>
 
 namespace etw {
 
 class Not : public PredicateInterface
+{
 public:
 	Not(PredicateInterface *inner);
 	bool evaluate(ConfigurationInterface *cfg, OptionInterface *op);
+private:
+	PredicateInterface *inner;
 
 };
 
 class And : public PredicateInterface
 {
 public:
-	And(PredicateInterface *lhs, PredicateInterface *rhs);
 	And(std::initializer_list<PredicateInterface *> all);
 	bool evaluate(ConfigurationInterface *cfg, OptionInterface *op);
+private:
+	std::list<PredicateInterface *> operands;
 
 };
 
 class Or : public PredicateInterface
 {
 public:
-	Or(PredicateInterface *lhs, PredicateInterface *rhs);
 	Or(std::initializer_list<PredicateInterface *> any);
 	bool evaluate(ConfigurationInterface *cfg, OptionInterface *op);
+private:
+	std::list<PredicateInterface *> operands;
 
 };
 
@@ -73,4 +82,5 @@ public:
 	bool evaluate(ConfigurationInterface *cfg, OptionInterface *op);
 };
 
+}
 #endif

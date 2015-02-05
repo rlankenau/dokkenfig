@@ -6,6 +6,7 @@ set(LIB_SRCS
 	NoConsistencyCheck.cpp
 	ValidationError.cpp
 	BasicExpressions.cpp
+	BasicPredicates.cpp
 	Common.cpp)
 
 add_library(config ${LIB_SRCS})

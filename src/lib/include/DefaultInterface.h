@@ -7,7 +7,7 @@ class Option;
 
 class DefaultInterface() {
 public:
-	virtual int getDefaultOption(Option** op) = 0;
+	virtual int getDefaultOption(std::string platform, Option** op) = 0;
 };
 
 }

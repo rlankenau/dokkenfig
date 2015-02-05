@@ -6,7 +6,7 @@ include_directories(${CONFIG_LIB_SOURCE}/include)
 
 set(TEST_SRC
 		RangeValidatorTest.cpp
-		DiscreteNumericValidatorTest.cpp
+		NumericValidatorTest.cpp
 		AnyPlatformValidatorTest.cpp)
 
 add_executable(config_unit_tests ${TEST_SRC})

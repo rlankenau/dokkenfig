@@ -1,6 +1,6 @@
 set(LIB_SRCS 
     RangeValidator.cpp
-    DiscreteNumericValidator.cpp
+    NumericValidator.cpp
     AnyPlatformValidator.cpp
 	Common.cpp)
 

@@ -1,7 +1,7 @@
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
 #include "Types.h"
-#include "AnyPlatformValidator.h"
+#include "platform_validators/AnyPlatformValidator.h"
 #include "mock/MockOption.h"
 
 using ::testing::Return;

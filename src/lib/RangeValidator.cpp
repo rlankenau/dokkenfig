@@ -1,16 +1,16 @@
-#include "RangeValidator.h"
+#include "validators/RangeValidator.h"
 #include "OptionInterface.h"
 #include "Types.h"
 
 namespace etw {
 
-	RangeValidator::RangeValidator(int64_t min, int64_t max)
+	ValidRangeValidator::ValidRangeValidator(int64_t min, int64_t max)
 	{
 		this->min_val = min;
 		this->max_val = max;
 	}
 
-	int RangeValidator::validateOption(OptionInterface *op)
+	int ValidRangeValidator::validateOption(OptionInterface *op)
 	{
 		int rc = RetVal::Failure;
 		int64_t val;
@@ -24,8 +24,35 @@ namespace etw {
 		return rc;
 	}
 
-	ValidatorInterface *Range(int64_t min, int64_t max)
+	ValidatorInterface *ValidRange(int64_t min, int64_t max)
 	{
-		return (ValidatorInterface *)new RangeValidator(min, max);
+		return (ValidatorInterface *)new ValidRangeValidator(min, max);
+	}
+
+	InvalidRangeValidator::InvalidRangeValidator(int64_t min, int64_t max)
+	{
+		this->min_val = min;
+		this->max_val = max;
+	}
+
+	int InvalidRangeValidator::validateOption(OptionInterface *op)
+	{
+		int rc = RetVal::Failure;
+		int64_t val;
+	   	if(op->getNumericValue(&val) == RetVal::Success) {
+			if(val >= this->min_val && val <= this->max_val)
+			{
+				rc = RetVal::Failure;
+			} else {
+				rc = RetVal::Success;
+			}
+		}
+
+		return rc;
+	}
+
+	ValidatorInterface *InvalidRange(int64_t min, int64_t max)
+	{
+		return (ValidatorInterface *)new InvalidRangeValidator(min, max);
 	}
 }

@@ -12,6 +12,13 @@ public:
 
 };
 
+class OptionType {
+public:
+	static const int String;
+	static const int Numeric;
+
+};
+
 }
 
 #endif

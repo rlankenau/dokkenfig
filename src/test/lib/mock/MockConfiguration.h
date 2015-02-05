@@ -11,6 +11,7 @@ public:
 	MOCK_METHOD2(setStringOption, int(std::string, std::string));
 	MOCK_METHOD2(getNumericOption, int(std::string, int64_t*));
 	MOCK_METHOD2(setNumericOption, int(std::string, int64_t));
+	MOCK_METHOD2(getOption, int(std::string, etw::OptionInterface**));
 	MOCK_METHOD2(registerOptionHandler, int(std::string, etw::ConfigurationHandlerInterface*));
 	MOCK_METHOD1(apply, int(etw::ValidationError &));
 

@@ -5,6 +5,7 @@ set(LIB_SRCS
     PlatformRestrictionValidator.cpp
 	NoConsistencyCheck.cpp
 	ValidationError.cpp
+	BasicExpressions.cpp
 	Common.cpp)
 
 add_library(config ${LIB_SRCS})

@@ -16,6 +16,7 @@ public:
 	virtual int setStringOption(std::string key, std::string val) = 0;
 	virtual int getNumericOption(std::string key, int64_t *val) = 0;
 	virtual int setNumericOption(std::string key, int64_t val) = 0;
+	virtual int getOption(std::string key, OptionInterface **op) = 0;
 	virtual int registerOptionHandler(std::string key, ConfigurationHandlerInterface *handler) = 0;
 	virtual int apply(ValidationError &err) = 0;
 
